@@ -1,0 +1,15 @@
+# Packaged defaults for demo-viewer. A project TOML (--project) overrides these,
+# environment variables DEMO_<SECTION>__<KEY> override that, and --set wins.
+
+[fake]
+n_events = 2000
+latency_s = 0.15
+
+[gather]
+pre = 0.3
+post = 0.7
+alignment = "arrival"
+phase = "P"
+
+[qc]
+codes = ["keeper", "noise", "review"]

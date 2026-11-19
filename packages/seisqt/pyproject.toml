@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "seisqt"
+version = "0.1.0"
+description = "PySide6 toolkit for MSI seismic apps: task runner, cache, stores, base window, panels."
+requires-python = ">=3.11"
+dependencies = [
+    "seiscore",
+    "numpy>=1.26",
+    "pyside6>=6.6",
+    "pyqtgraph>=0.13.7",
+]
+
+[tool.uv.sources]
+seiscore = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/seisqt"]

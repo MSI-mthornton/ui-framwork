@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "demo-viewer"
+version = "0.1.0"
+description = "Reference app built on seisqt: synthetic events and gathers, no Pulse needed."
+requires-python = ">=3.11"
+dependencies = ["seisqt"]
+
+[project.scripts]
+demo-viewer = "demo_viewer.app:main"
+
+[tool.uv.sources]
+seisqt = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/demo_viewer"]

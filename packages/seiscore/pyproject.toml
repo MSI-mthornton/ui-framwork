@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "seiscore"
+version = "0.1.0"
+description = "Qt-free core for MSI seismic apps: domain types, conventions, DSP, data sources, config."
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+]
+
+[project.optional-dependencies]
+# Pulse support needs pulse-sdk and pulse-schemas installed by the app
+# (they come from a private git repo, so they are not declared here).
+aoi = ["pyshp>=2.3", "pyproj>=3.6"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/seiscore"]
